@@ -1,0 +1,11 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My Writebook'
+theme = 'writebook'
+disableKinds = ["taxonomy", "term", "section"]
+
+
+[params]
+  author = "Author Name"
+  description = "A book about something interesting."
+  cover_image = "/images/cover.png" # Default cover image

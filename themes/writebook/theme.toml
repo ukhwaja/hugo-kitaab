@@ -1,0 +1,12 @@
+name = "Writebook"
+license = "MIT"
+licenselink = "https://github.com/yourname/writebook/blob/master/LICENSE"
+description = "A Hugo theme inspired by Writebook"
+homepage = "https://github.com/yourname/writebook"
+tags = ["book", "clean", "minimal"]
+features = ["blog", "responsive"]
+min_version = "0.41.0"
+
+[author]
+  name = "Antigravity"
+  homepage = "https://example.com"
