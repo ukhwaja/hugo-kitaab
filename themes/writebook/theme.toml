@@ -1,12 +1,12 @@
 name = "Writebook"
 license = "MIT"
-licenselink = "https://github.com/yourname/writebook/blob/master/LICENSE"
-description = "A Hugo theme inspired by Writebook"
-homepage = "https://github.com/yourname/writebook"
-tags = ["book", "clean", "minimal"]
-features = ["blog", "responsive"]
+licenselink = "https://github.com/ukhwaja/hugo-kitaab/blob/main/LICENSE"
+description = "A Hugo theme inspired by Writebook by 37signals"
+homepage = "https://github.com/ukhwaja/hugo-kitaab"
+tags = ["book", "clean", "minimal", "writing"]
+features = ["responsive", "dark-mode", "toc"]
 min_version = "0.41.0"
 
 [author]
-  name = "Antigravity"
-  homepage = "https://example.com"
+  name = "Usman Khwaja"
+  homepage = "https://github.com/ukhwaja"
