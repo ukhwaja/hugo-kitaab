@@ -3,7 +3,7 @@
     <aside class="cover-panel">
         {{ with .Site.Params.cover_image }}
         <div class="book-cover">
-            <img src="{{ . | relURL }}" alt="Book Cover">
+            <img src="{{ . | absURL }}" alt="Book Cover">
         </div>
         {{ end }}
         <div class="book-info">
@@ -65,7 +65,7 @@
                 </div>
                 {{ with .Params.image }}
                 <div class="chapter-thumbnail">
-                    <img src="{{ . | relURL }}" alt="Chapter Thumbnail">
+                    <img src="{{ . | absURL }}" alt="Chapter Thumbnail">
                 </div>
                 {{ end }}
             </a>

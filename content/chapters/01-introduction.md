@@ -2,7 +2,7 @@
 title: "01 - The Beginning"
 date: 2023-10-01
 weight: 1
-image: "/images/chapter1.png"
+image: "images/chapter1.png"
 summary: "In which we explore the origins of the code and the philosophy behind it. A journey of a thousand commits begins with a single init."
 ---
 

@@ -1,11 +1,13 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://ukhwaja.github.io/hugo-kitaab/'
 languageCode = 'en-us'
 title = 'My Writebook'
 theme = 'writebook'
 disableKinds = ["taxonomy", "term", "section"]
+relativeURLs = false
+canonifyURLs = true
 
 
 [params]
   author = "Author Name"
   description = "A book about something interesting."
-  cover_image = "/images/cover.png" # Default cover image
+  cover_image = "images/cover.png" # Default cover image

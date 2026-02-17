@@ -2,7 +2,7 @@
 title: "02 - Building Blocks"
 date: 2023-10-02
 weight: 2
-image: "/images/chapter2.png"
+image: "images/chapter2.png"
 summary: "Understanding the fundamental components that make up the system. From atoms to molecules, we build our digital world."
 ---
 

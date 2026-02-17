@@ -2,7 +2,7 @@
 title: "03 - Scaling Up"
 date: 2023-10-03
 weight: 3
-image: "/images/chapter3.png"
+image: "images/chapter3.png"
 summary: "When the system grows beyond a single machine. The challenges of distributed consensus and the art of keeping things in sync."
 ---
 
