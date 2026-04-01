@@ -2,22 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const themeToggleSingle = document.getElementById('theme-toggle-single');
-    const body = document.body;
-
-    // Check saved theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        body.setAttribute('data-theme', savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        body.setAttribute('data-theme', 'dark');
-    }
+    const root = document.documentElement;
 
     function toggleTheme() {
-        if (body.getAttribute('data-theme') === 'dark') {
-            body.setAttribute('data-theme', 'light');
+        if (root.getAttribute('data-theme') === 'dark') {
+            root.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
         } else {
-            body.setAttribute('data-theme', 'dark');
+            root.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
         }
     }
