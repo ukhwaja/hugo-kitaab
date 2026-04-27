@@ -1,11 +1,42 @@
 {{ define "main" }}
 <div class="single-layout">
-    <aside class="toc-panel">
-        <a href="{{ .Site.BaseURL }}" class="back-link">← Back to Book</a>
-        <nav id="TableOfContents">
-            {{ .TableOfContents }}
-        </nav>
+    <!-- Mobile Toggle -->
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle Sidebar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="{{ .Site.BaseURL }}" class="back-link">← Back to Book</a>
+        </div>
+
+        <div class="sidebar-content">
+            <section class="sidebar-section">
+                <h3>Chapters</h3>
+                <nav class="chapter-nav-list">
+                    {{ range .Parent.RegularPages.ByWeight }}
+                    <a href="{{ .Permalink }}" class="chapter-link {{ if eq . $.Page }}active{{ end }}">
+                        {{ .Title }}
+                    </a>
+                    {{ end }}
+                </nav>
+            </section>
+
+            {{ if .TableOfContents }}
+            <section class="sidebar-section">
+                <h3>On this page</h3>
+                <div class="toc-container">
+                    {{ .TableOfContents }}
+                </div>
+            </section>
+            {{ end }}
+        </div>
     </aside>
+
     <main class="chapter-content-area">
         <article class="chapter-text">
             <header>
@@ -16,15 +47,23 @@
                 {{ .Content }}
             </div>
         </article>
-        <div class="chapter-nav">
+
+        <div class="chapter-nav-bottom">
             {{ with .NextInSection }}
-            <a href="{{ .Permalink }}" class="next-chapter">← {{ .Title }}</a>
+            <a href="{{ .Permalink }}" class="prev-chapter">
+                <span class="nav-label">Previous</span>
+                <span class="nav-title">← {{ .Title }}</span>
+            </a>
             {{ end }}
             {{ with .PrevInSection }}
-            <a href="{{ .Permalink }}" class="prev-chapter">{{ .Title }} →</a>
+            <a href="{{ .Permalink }}" class="next-chapter">
+                <span class="nav-label">Next</span>
+                <span class="nav-title">{{ .Title }} →</span>
+            </a>
             {{ end }}
         </div>
     </main>
+
     <div class="theme-toggle-container">
         <button id="theme-toggle-single" class="icon-btn" aria-label="Toggle Dark Mode">
             <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -44,4 +83,6 @@
         </button>
     </div>
 </div>
+
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
 {{ end }}
