@@ -40,7 +40,7 @@ This project draws inspiration from the "Once" philosophy by 37signals—creatin
 ## 🛠️ Configuration
 Edit `hugo.toml` to customize your book:
 ```toml
-title = 'My Writebook'
+title = 'My Kitaab'
 theme = 'writebook'
 
 [params]

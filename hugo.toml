@@ -1,6 +1,6 @@
 baseURL = 'https://ukhwaja.github.io/hugo-kitaab/'
-languageCode = 'en-us'
-title = 'My Writebook'
+DefaultContentLanguage = 'en-us'
+title = 'My Kitaab'
 theme = 'writebook'
 disableKinds = ["taxonomy", "term", "section"]
 relativeURLs = false
