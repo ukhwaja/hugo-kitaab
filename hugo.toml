@@ -1,4 +1,4 @@
-baseURL = 'https://ukhwaja.github.io/hugo-kitaab/'
+baseURL = '/'
 DefaultContentLanguage = 'en-us'
 title = 'My Kitaab'
 theme = 'writebook'
