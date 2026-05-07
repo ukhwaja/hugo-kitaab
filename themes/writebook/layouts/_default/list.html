@@ -1,0 +1,66 @@
+{{ define "main" }}
+<div class="split-layout" {{ if eq .Params.direction "rtl" }}dir="rtl"{{ end }}>
+    <aside class="cover-panel">
+        <div class="sidebar-header-mobile">
+            <a href="{{ .Site.BaseURL }}" class="back-link">Back to Bookshelf</a>
+        </div>
+        {{ with .Params.image }}
+        <div class="book-cover">
+            <img src="{{ . | absURL }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}
+        <div class="book-info">
+            <h1>{{ .Title }}</h1>
+            <p class="author">{{ .Params.author }}</p>
+            <p class="description">{{ .Description | default .Summary }}</p>
+            <div class="desktop-back">
+                <a href="{{ .Site.BaseURL }}" class="back-link">Back to Bookshelf</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="content-panel" data-view="grid">
+        <header class="content-header">
+            <div class="controls">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                    <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <div id="chapter-container" class="chapter-list">
+            {{ range .Pages.ByWeight }}
+            <a href="{{ .RelPermalink }}" class="chapter-item">
+                <div class="chapter-content">
+                    <h2 class="chapter-title">{{ .Title }}</h2>
+                    <div class="chapter-meta">
+                        <span class="word-count">{{ .WordCount }} words</span>
+                    </div>
+                    <div class="chapter-summary">
+                        {{ .Summary }}
+                    </div>
+                </div>
+                {{ with .Params.image }}
+                <div class="chapter-thumbnail">
+                    <img src="{{ . | absURL }}" alt="Chapter Thumbnail">
+                </div>
+                {{ end }}
+            </a>
+            {{ end }}
+        </div>
+    </main>
+</div>
+{{ end }}

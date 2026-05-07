@@ -1,13 +1,15 @@
 baseURL = '/'
-DefaultContentLanguage = 'en-us'
-title = 'My Kitaab'
+title = 'My Kutub'
 theme = 'writebook'
 disableKinds = ["taxonomy", "term", "section"]
 relativeURLs = false
 canonifyURLs = true
 
-
-[params]
-  author = "Author Name"
-  description = "A book about something interesting."
-  cover_image = "images/cover.png" # Default cover image
+[languages]
+  [languages.en]
+    contentDir = 'content/en'
+    label = 'English'
+    weight = 1
+    title = 'Bookshelf'
+    [languages.en.params]
+      description = "A collection of my books."

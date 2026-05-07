@@ -1,5 +1,7 @@
 {{ define "main" }}
-<div class="single-layout">
+{{ $section := .Site.GetPage "section" .Section }}
+{{ $isRTL := or (eq .Params.direction "rtl") (eq $section.Params.direction "rtl") }}
+<div class="single-layout" {{ if $isRTL }}dir="rtl"{{ end }}>
     <!-- Mobile Toggle -->
     <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle Sidebar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -11,7 +13,25 @@
 
     <aside class="sidebar">
         <div class="sidebar-header">
-            <a href="{{ .Site.BaseURL }}" class="back-link">← Back to Book</a>
+            <div class="breadcrumbs">
+                <a href="{{ .Site.BaseURL }}" class="back-link">Bookshelf</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="{{ $section.Permalink }}" class="back-link book-home-link">{{ $section.Title }}</a>
+            </div>
+        </div>
+
+        <div class="sidebar-book-meta">
+            {{ with $section }}
+                <a href="{{ .Permalink }}" class="sidebar-book-link">
+                    <div class="sidebar-cover">
+                        <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}">
+                    </div>
+                    <div class="sidebar-info">
+                        <h2>{{ .Title }}</h2>
+                        <p class="author">{{ .Params.author }}</p>
+                    </div>
+                </a>
+            {{ end }}
         </div>
 
         <div class="sidebar-content">
@@ -26,7 +46,7 @@
                 </nav>
             </section>
 
-            {{ if .TableOfContents }}
+            {{ if (findRE "<li>" .TableOfContents) }}
             <section class="sidebar-section">
                 <h3>On this page</h3>
                 <div class="toc-container">
@@ -49,16 +69,16 @@
         </article>
 
         <div class="chapter-nav-bottom">
-            {{ with .NextInSection }}
+            {{ with .PrevInSection }}
             <a href="{{ .Permalink }}" class="prev-chapter">
                 <span class="nav-label">Previous</span>
-                <span class="nav-title">← {{ .Title }}</span>
+                <span class="nav-title">{{ .Title }}</span>
             </a>
             {{ end }}
-            {{ with .PrevInSection }}
+            {{ with .NextInSection }}
             <a href="{{ .Permalink }}" class="next-chapter">
                 <span class="nav-label">Next</span>
-                <span class="nav-title">{{ .Title }} →</span>
+                <span class="nav-title">{{ .Title }}</span>
             </a>
             {{ end }}
         </div>
