@@ -1,7 +1,7 @@
 baseURL = '/'
 title = 'My Kutub'
 theme = 'writebook'
-disableKinds = ["taxonomy", "term", "section"]
+disableKinds = ["taxonomy", "term"]
 relativeURLs = false
 canonifyURLs = true
 
