@@ -1,7 +1,8 @@
 {{ define "main" }}
 {{ $section := .Site.GetPage "section" .Section }}
 {{ $isRTL := or (eq .Params.direction "rtl") (eq $section.Params.direction "rtl") }}
-<div class="single-layout" {{ if $isRTL }}dir="rtl"{{ end }}>
+{{ $lang := .Params.language | default $section.Params.language }}
+<div class="single-layout" {{ if $isRTL }}dir="rtl"{{ end }} {{ with $lang }}lang="{{ . }}"{{ end }}>
     <!-- Mobile Toggle -->
     <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle Sidebar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

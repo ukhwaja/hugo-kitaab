@@ -7,6 +7,7 @@
     --secondary-bg: #f7f7e8;
     --font-sans: 'Inter', sans-serif;
     --font-serif: 'Merriweather', serif;
+    --font-urdu: 'Merriweather', 'Noto Nastaliq Urdu', serif;
 }
 
 [data-theme="dark"] {
@@ -108,13 +109,13 @@ a {
     padding: 2rem 1.5rem;
     border-bottom: 1px solid var(--border-color);
     text-align: center;
-    background-color: rgba(0,0,0,0.02);
+    background-color: rgba(0, 0, 0, 0.02);
 }
 
 .sidebar-cover {
     width: 120px;
     margin: 0 auto 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-cover img {
@@ -149,6 +150,7 @@ a {
     .sidebar-header-mobile {
         display: block;
     }
+
     .desktop-back {
         display: none;
     }
@@ -226,6 +228,30 @@ a {
     text-align: right;
 }
 
+/* Language Specific Fonts */
+[lang="ur"],
+[lang="ur"] h1,
+[lang="ur"] h2,
+[lang="ur"] h3,
+[lang="ur"] .chapter-title,
+[lang="ur"] .book-card-title,
+[lang="ur"] .book-card-author,
+[lang="ur"] .sidebar-info h2,
+[lang="ur"] .sidebar-info .author,
+[lang="ur"] .book-info h1,
+[lang="ur"] .book-info .author,
+[lang="ur"] .book-info .description,
+[lang="ur"] .chapter-text {
+    font-family: var(--font-urdu);
+    /* line-height: 2; */
+}
+
+/* Example: Adding support for another language
+[lang="ar"] {
+    font-family: 'Noto Sans Arabic', sans-serif;
+}
+*/
+
 [dir="rtl"] .cover-panel {
     border-right: none;
     border-left: 1px solid var(--border-color);
@@ -259,6 +285,7 @@ a {
     [dir="rtl"] .sidebar {
         transform: translateX(100%);
     }
+
     [dir="rtl"] .sidebar.open {
         transform: translateX(0);
     }
@@ -602,7 +629,8 @@ a {
     gap: 2rem;
 }
 
-.prev-chapter, .next-chapter {
+.prev-chapter,
+.next-chapter {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -612,11 +640,12 @@ a {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.prev-chapter:hover, .next-chapter:hover {
+.prev-chapter:hover,
+.next-chapter:hover {
     border-color: var(--accent-color);
     background-color: var(--secondary-bg);
     transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 .nav-label {
@@ -668,7 +697,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(4px);
     z-index: 99;
     opacity: 0;
@@ -710,7 +739,7 @@ a {
         bottom: 0;
         transform: translateX(-100%);
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 20px 0 50px rgba(0,0,0,0.1);
+        box-shadow: 20px 0 50px rgba(0, 0, 0, 0.1);
     }
 
     .sidebar.open {
@@ -725,11 +754,12 @@ a {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .next-chapter {
         text-align: left;
     }
 }
+
 /* Breadcrumbs & Navigation Improvements */
 .breadcrumbs {
     display: flex;

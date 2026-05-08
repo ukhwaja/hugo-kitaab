@@ -17,7 +17,7 @@
                         <div class="placeholder-cover"></div>
                         {{ end }}
                     </div>
-                    <div class="book-card-content">
+                    <div class="book-card-content" {{ with .Params.language }}lang="{{ . }}" {{ end }}>
                         <h2 class="book-card-title">{{ .Title }}</h2>
                         <p class="book-card-author">{{ .Params.author }}</p>
                         <div class="book-card-meta">

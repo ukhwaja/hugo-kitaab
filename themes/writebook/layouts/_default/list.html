@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="split-layout" {{ if eq .Params.direction "rtl" }}dir="rtl"{{ end }}>
+<div class="split-layout" {{ if eq .Params.direction "rtl" }}dir="rtl"{{ end }} {{ with .Params.language }}lang="{{ . }}"{{ end }}>
     <aside class="cover-panel">
         <div class="sidebar-header-mobile">
             <a href="{{ .Site.BaseURL }}" class="back-link">Back to Bookshelf</a>
