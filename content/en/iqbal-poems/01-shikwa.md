@@ -1,7 +1,7 @@
 ---
 title: "شکوہ"
 date: 2024-05-07
-image: "images/chapter1.png"
+image: "images/iqbal-poems/01-shikwa.png"
 ---
 
 کیوں زیاں کار بنوں، سود فراموش رہوں؟

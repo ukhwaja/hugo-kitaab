@@ -1,7 +1,7 @@
 ---
 title: "جواب شکوہ"
 date: 2024-05-07
-image: "images/chapter2.png"
+image: "images/iqbal-poems/02-jawab-e-shikwa-v2.png"
 ---
 
 دل سے جو بات نکلتی ہے، اثر رکھتی ہے
