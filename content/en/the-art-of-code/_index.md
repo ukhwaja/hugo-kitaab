@@ -1,6 +1,6 @@
 ---
-title: "My English Book"
+title: "The Art of Code"
 description: "A book about something interesting."
 image: "images/my-english-book/cover.png"
-author: "Author Name"
+author: "J. K. Rivers"
 ---
